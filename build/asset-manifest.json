@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3bfecce2.chunk.css",
+    "main.js": "/static/js/main.96904d82.chunk.js",
+    "main.js.map": "/static/js/main.96904d82.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.cdca869d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.cdca869d.js.map",
+    "static/js/2.6c827685.chunk.js": "/static/js/2.6c827685.chunk.js",
+    "static/js/2.6c827685.chunk.js.map": "/static/js/2.6c827685.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.d144bef1bf58ed4c0918923bfaf3c8e8.js": "/precache-manifest.d144bef1bf58ed4c0918923bfaf3c8e8.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.3bfecce2.chunk.css.map": "/static/css/main.3bfecce2.chunk.css.map",
+    "static/js/2.6c827685.chunk.js.LICENSE": "/static/js/2.6c827685.chunk.js.LICENSE",
+    "static/media/IMDb.png": "/static/media/IMDb.2dae0ee6.png",
+    "static/media/MetaCritic.png": "/static/media/MetaCritic.34270fd3.png",
+    "static/media/index.css": "/static/media/film-background.fc72d862.png",
+    "static/media/loadingicon.svg": "/static/media/loadingicon.ccb6952e.svg",
+    "static/media/popcornsmooth.png": "/static/media/popcornsmooth.ab9fd6bc.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cdca869d.js",
+    "static/js/2.6c827685.chunk.js",
+    "static/css/main.3bfecce2.chunk.css",
+    "static/js/main.96904d82.chunk.js"
+  ]
+}
