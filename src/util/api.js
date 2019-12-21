@@ -1,7 +1,9 @@
 const fetch = require('node-fetch');
-const baseUrl = 'http://localhost:5000/';
+const baseUrl = 'http://popcornapi-env.vpidtmte25.us-east-2.elasticbeanstalk.com/';
 
 const converter = (fetchedMovie) => {
+    let minusWildCard = fetchedMovie.plot.replace('*', "'")
+
     return {
         id: fetchedMovie.id, 
         title: fetchedMovie.title, 
@@ -10,18 +12,19 @@ const converter = (fetchedMovie) => {
             imdb: fetchedMovie.rating, 
             metaCritic: fetchedMovie.metascore
         },
-        runTime: fetchedMovie.runtime,
+        runTime: fetchedMovie.runtime + ' mins',
         releaseDate: fetchedMovie.year,
-        plot: fetchedMovie.plot
+        plot: minusWildCard
     }
 };
 
 const Api = {
     async getMovieData(genre, minRating, startYear, endYear) {
 
-            const response = await fetch(baseUrl+`?genre=${genre}&minrating=${minRating}&startYear=${startYear}&endYear=${endYear}`)
+            const response = await fetch(baseUrl+`?genre=${genre}&minrating=${minRating}&startYear=${startYear}&endYear=${endYear}`, {mode: 'cors'})
             .then(response => response.json())
             .then(async jsonResponse => {
+                console.log(jsonResponse)
                 if (!jsonResponse.movies[0] && endYear < 2019) {alert('There are no movies that meet your search criteria! We suggest you make one =). P.S. We can lend you a time machine'); return []}
                 if (!jsonResponse.movies[0] && endYear === 2019) {alert('There are no movies that meet your search criteria! Hollywood awaits your debut next year!!'); return []}
 
