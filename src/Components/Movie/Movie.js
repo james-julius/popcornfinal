@@ -5,7 +5,7 @@ import MetaCritic from'../../Resources/MetaCritic.png';
 
 class Movie extends React.Component {
     getAverage() {
-        if (this.props.ratings.metaCritic === 'null') {return this.props.ratings.imdb}
+        if (this.props.ratings.metaCritic === 'null' || this.props.ratings.metaCritic === 'null\r') {return this.props.ratings.imdb}
         let sum =  (Number(this.props.ratings.imdb) + (Number(this.props.ratings.metaCritic))/10)/2;
         return Math.round(sum * 10)/10;
     }
@@ -26,7 +26,7 @@ class Movie extends React.Component {
                 <span className="body mainrating-container flex-center"><p className="mainrating flex-center">{this.getAverage()}/10</p></span>
                 <div className="footer ratings">
                     <span className="flex-center logos"><img src={IMDb} height="40em" width="40em" alt="IMDb: "></img> {(this.props.ratings.imdb) ? this.props.ratings.imdb :'N/A'}</span>
-                    <span className="flex-center logos"><img src={MetaCritic} height="40em" width="40em" alt="MetaCritic: "></img> {(this.props.ratings.metaCritic) ? this.props.ratings.metaCritic :'N/A'}</span>
+                    <span className="flex-center logos"><img src={MetaCritic} height="40em" width="40em" alt="MetaCritic: "></img> {(!this.props.ratings.metaCritic || this.props.ratings.metaCritic === 'null\r') ? 'N/A': this.props.ratings.metaCritic}</span>
                 </div>
             </div>
 
